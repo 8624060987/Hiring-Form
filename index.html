@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grambytes Nexus — Data Analytics Mentor / Trainer Campaign</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Apply as a Data Analytics Mentor / Trainer at Grambytes Nexus. Share your expertise, lead cohorts, and guide future data professionals.">
+  <meta name="keywords" content="Data Analyst, Mentor, Trainer, Hiring, SQL, Python, Power BI, Excel, Data Analytics, Job Form">
+  
+  <!-- Inter Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Configuration for customized theme accents -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f7ff',
+              100: '#ebf0ff',
+              500: '#4f46e5',
+              600: '#4338ca',
+              700: '#3730a3',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Configuration and Main Application Logic -->
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden tech-grid-bg">
+
+  <!-- Sticky Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#home" class="flex items-center space-x-2.5 focus:outline-none">
+            <img src="logo.png" alt="Grambytes Nexus Logo" class="h-10 w-10 object-contain rounded-lg shadow-sm border border-slate-100 bg-white p-0.5">
+            <span id="header-logo-text" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 to-indigo-950 bg-clip-text text-transparent">
+              Grambytes Nexus
+            </span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8" id="desktop-nav">
+          <!-- Dynamic navigation links will load here -->
+        </nav>
+
+        <!-- Header CTA Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#application" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg text-sm shadow-sm hover:shadow transition-all duration-200">
+            Apply Now
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="flex md:hidden">
+          <button id="mobile-menu-toggle" type="button" class="text-slate-700 hover:text-indigo-600 focus:outline-none p-2 rounded-md transition-colors" aria-expanded="false" aria-label="Toggle navigation menu">
+            <i data-lucide="menu" class="w-6 h-6 block" id="menu-icon"></i>
+            <i data-lucide="x" class="w-6 h-6 hidden" id="close-icon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-lg transition-all duration-300">
+      <div class="px-4 pt-2 pb-6 space-y-3 sm:px-6">
+        <div class="flex flex-col space-y-2" id="mobile-nav-links">
+          <!-- Dynamic mobile navigation links will load here -->
+        </div>
+        <div class="pt-4 border-t border-slate-100">
+          <a href="#application" class="block w-full text-center px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg text-base shadow-sm transition-all duration-200">
+            Apply Now
+          </a>
+          <p class="text-xs text-center text-slate-500 mt-2.5">
+            Complete the application form on this page to apply.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden min-h-screen flex items-center">
+    <!-- Premium Abstract Tech Constellation & Data Mesh Background -->
+    <div class="absolute inset-0 opacity-40 pointer-events-none -z-10 select-none">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="mesh-glow" cx="50%" cy="30%" r="50%">
+            <stop offset="0%" stop-color="#e0e7ff" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#f8fafc" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#mesh-glow)" />
+        
+        <!-- Large blurred decorative radial highlights -->
+        <circle cx="15%" cy="35%" r="220" fill="#a78bfa" opacity="0.08" class="blur-[70px] animate-pulse-slow" />
+        <circle cx="85%" cy="65%" r="280" fill="#60a5fa" opacity="0.08" class="blur-[90px] animate-pulse-slow animation-delay-2000" />
+        
+        <!-- Abstract connecting network lines (Data Mesh) -->
+        <path d="M -100 250 L 150 380 L 300 220 L 520 480 L 720 370 L 980 580 L 1220 420 L 1600 620" fill="none" stroke="rgba(99, 102, 241, 0.07)" stroke-width="2" />
+        <path d="M 0 480 L 270 320 L 480 580 L 820 430 L 1080 680 L 1320 520" fill="none" stroke="rgba(139, 92, 246, 0.05)" stroke-width="1.5" stroke-dasharray="6,6" />
+        
+        <!-- Interactive data constellation node circles -->
+        <circle cx="150" cy="380" r="4.5" fill="#818cf8" opacity="0.4" />
+        <circle cx="300" cy="220" r="3.5" fill="#a78bfa" opacity="0.3" />
+        <circle cx="520" cy="480" r="5.5" fill="#60a5fa" opacity="0.4" />
+        <circle cx="720" cy="370" r="4" fill="#818cf8" opacity="0.3" />
+        <circle cx="980" cy="580" r="6" fill="#a78bfa" opacity="0.4" />
+        <circle cx="1220" cy="420" r="4.5" fill="#60a5fa" opacity="0.3" />
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text Column -->
+        <div class="lg:col-span-6 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold uppercase tracking-wider animate-bounce" id="hero-badge">
+            Nexus Hiring Campaign
+          </div>
+          
+          <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            We're Hiring — <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Data Analytics</span>
+          </h1>
+          
+          <p id="hero-subtitle" class="text-lg sm:text-xl font-medium text-slate-700">
+            Turn data into insights. Build your career with us.
+          </p>
+          
+          <p id="hero-description" class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Are you passionate about teaching, training, or mentoring future data professionals? Join Grambytes Nexus to lead cohorts, conduct code analysis, and design real-world projects in Remote and Hybrid modes.
+          </p>
+          
+          <!-- Actions & CTA -->
+          <div class="pt-2 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center lg:justify-start items-center">
+            <a href="#application" class="w-full sm:w-auto text-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-base shadow-lg shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5 transition-all duration-200">
+              Apply Now
+            </a>
+            <a href="#about" class="w-full sm:w-auto text-center px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-semibold rounded-xl text-base border border-slate-200 shadow-sm hover:shadow transition-all duration-200">
+              Explore Opportunity
+            </a>
+          </div>
+
+          <!-- Note -->
+          <p id="hero-cta-note" class="text-xs text-slate-500 max-w-xs mx-auto lg:mx-0">
+            Fill out the custom application form below to apply directly.
+          </p>
+        </div>
+
+        <!-- Hero Visualization Column (Branded Image Showcase) -->
+        <div class="lg:col-span-6 relative flex justify-center items-center w-full">
+          <div class="w-full max-w-2xl relative animate-float">
+            <!-- Glass image container card -->
+            <div class="glass-card rounded-2xl p-3 shadow-2xl border border-slate-200/80 relative z-10 bg-white/40 backdrop-blur-md">
+              <div class="relative overflow-hidden rounded-xl">
+                <img src="hero_image.jpg" alt="Data Analytics Mentor at Work" class="w-full h-auto rounded-xl">
+                <!-- Floating overlay badge -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl border border-slate-200/50 shadow-sm flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-indigo-600 font-bold uppercase tracking-wider block">Mentor Spotlight</span>
+                    <span class="text-sm font-bold text-slate-800">Learn. Build. Grow.</span>
+                  </div>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-50 text-indigo-700 flex items-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mr-1 animate-pulse"></span> ACTIVE
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decorative framing layers for depth -->
+            <div class="absolute -right-5 -bottom-5 w-full h-full border border-indigo-100 rounded-2xl -z-0"></div>
+            <div class="absolute -left-4 -top-4 w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center animate-bounce animation-delay-2000"><i data-lucide="cpu" class="w-5 h-5 text-purple-600"></i></div>
+            <div class="absolute right-12 -top-8 w-10 h-10 bg-indigo-500/10 rounded-full flex items-center justify-center animate-bounce"><i data-lucide="line-chart" class="w-4 h-4 text-indigo-600"></i></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- About The Role Section -->
+  <section id="about" class="py-20 md:py-28 bg-white border-y border-slate-100 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 id="about-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          About the Role
+        </h2>
+        <div class="w-12 h-1 bg-indigo-600 rounded mx-auto mt-4 mb-6"></div>
+        <p id="about-subtitle" class="text-lg text-slate-600">
+          What you will do as a Data Analytics Mentor / Trainer
+        </p>
+      </div>
+
+      <!-- Grid for dynamic role pillar cards -->
+      <div id="about-role-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Rendered dynamically by app.js from CONFIG -->
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Key Skills Section -->
+  <section id="skills" class="py-20 md:py-28 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 id="skills-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Relevant Skills
+        </h2>
+        <div class="w-12 h-1 bg-indigo-600 rounded mx-auto mt-4 mb-6"></div>
+        <p id="skills-subtitle" class="text-lg text-slate-600">
+          Skills that support success in this role (we value learning and drive over strict checklists)
+        </p>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by app.js from CONFIG -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Who Can Apply Section -->
+  <section id="eligibility" class="py-20 md:py-28 bg-white border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 id="eligibility-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Who Can Apply?
+        </h2>
+        <div class="w-12 h-1 bg-indigo-600 rounded mx-auto mt-4 mb-6"></div>
+        <p id="eligibility-subtitle" class="text-lg text-slate-600">
+          We welcome applications from motivated learners and thinkers
+        </p>
+      </div>
+
+      <!-- Eligibility Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left graphic column -->
+        <div class="lg:col-span-5 order-2 lg:order-1 relative">
+          <div class="glass-card rounded-2xl p-6 shadow-lg border border-slate-200 relative overflow-hidden bg-white/70">
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+                <i data-lucide="check-square" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-800">Ideal Applicant DNA</h3>
+            </div>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start space-x-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <span class="text-sm font-semibold text-slate-700 block">Trainer Mindset</span>
+                  <span class="text-xs text-slate-500">Enjoys clarifying complex equations.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <span class="text-sm font-semibold text-slate-700 block">Technical Analyst</span>
+                  <span class="text-xs text-slate-500">Expertise in Excel modeling and SQL joins.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3">
+                <div class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <div>
+                  <span class="text-sm font-semibold text-slate-700 block">Feedback Mentor</span>
+                  <span class="text-xs text-slate-500">Provides clear guidelines to learners.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right content list column -->
+        <div id="eligibility-list" class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <!-- Rendered dynamically by app.js from CONFIG -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Join Us Section -->
+  <section id="why-join" class="py-20 md:py-28 relative">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 tech-accent-purple rounded-full filter blur-3xl -z-10 animate-pulse-slow"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 id="why-join-title" class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Why Join Us?
+        </h2>
+        <div class="w-12 h-1 bg-indigo-600 rounded mx-auto mt-4 mb-6"></div>
+        <p id="why-join-subtitle" class="text-lg text-slate-600">
+          Work, learn, and grow alongside a supportive engineering and analytics team
+        </p>
+      </div>
+
+      <!-- Why Join Cards Grid -->
+      <div id="why-join-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by app.js from CONFIG -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Application Form Section -->
+  <section id="application" class="py-20 md:py-28 bg-slate-100 border-t border-slate-200 scroll-mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Form Card Container -->
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden relative">
+        
+        <!-- Form Header -->
+        <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 px-6 py-10 sm:p-10 text-white relative">
+          <div class="absolute inset-0 tech-grid-bg opacity-10"></div>
+          <div class="relative z-10 space-y-2">
+            <h2 class="text-2xl sm:text-3xl font-extrabold" id="form-title">
+              Mentor / Trainer Application
+            </h2>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed" id="form-subtitle">
+              We are hiring Data Analytics Mentors / Trainers for Part-Time and Full-Time opportunities in Remote and Hybrid modes. Please provide accurate information. Shortlisted candidates will be contacted by our team.
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-rose-300 font-semibold pt-1">
+              <span>* Indicates required question</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Step Progress Bar -->
+        <div class="px-6 pt-6 sm:px-10 border-b border-slate-100">
+          <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <span class="step-indicator active text-indigo-600" id="step-ind-1">1. Personal Info</span>
+            <span class="h-px bg-slate-200 flex-1 mx-3"></span>
+            <span class="step-indicator" id="step-ind-2">2. Experience</span>
+            <span class="h-px bg-slate-200 flex-1 mx-3"></span>
+            <span class="step-indicator" id="step-ind-3">3. Skills & Projects</span>
+            <span class="h-px bg-slate-200 flex-1 mx-3"></span>
+            <span class="step-indicator" id="step-ind-4">4. Submit</span>
+          </div>
+          <div class="w-full bg-slate-100 h-1 rounded-full mt-4 overflow-hidden">
+            <div id="progress-bar-fill" class="bg-indigo-600 h-1 w-1/4 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Error Alert Container -->
+        <div id="form-error-alert" class="hidden mx-6 mt-6 sm:mx-10 p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl flex items-start space-x-3 text-sm">
+          <i data-lucide="alert-circle" class="w-5 h-5 shrink-0 text-rose-500 mt-0.5"></i>
+          <span id="form-error-message">Unable to submit your application right now. Please try again.</span>
+        </div>
+
+        <!-- HTML Form -->
+        <form id="hiring-application-form" class="p-6 sm:p-10 space-y-8" novalidate>
+          
+          <!-- STEP 1: Personal Information -->
+          <div id="step-section-1" class="step-section space-y-6">
+            <h3 class="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center">
+              <i data-lucide="user" class="w-5 h-5 mr-2 text-indigo-600"></i> Personal Information
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Full Name -->
+              <div class="space-y-1.5">
+                <label for="fullName" class="block text-sm font-semibold text-slate-700">Full Name <span class="text-rose-500">*</span></label>
+                <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition outline-none text-slate-800 placeholder-slate-400" placeholder="John Doe">
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please enter your full name.</p>
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="space-y-1.5">
+                <label for="mobileNumber" class="block text-sm font-semibold text-slate-700">Mobile Number <span class="text-rose-500">*</span></label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition outline-none text-slate-800 placeholder-slate-400" placeholder="+1 (555) 000-0000">
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please enter a valid mobile number.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Email Address -->
+              <div class="space-y-1.5">
+                <label for="email" class="block text-sm font-semibold text-slate-700">Email Address <span class="text-rose-500">*</span></label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition outline-none text-slate-800 placeholder-slate-400" placeholder="john@example.com">
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please enter a valid email address.</p>
+              </div>
+
+              <!-- Current Location -->
+              <div class="space-y-1.5">
+                <label for="location" class="block text-sm font-semibold text-slate-700">Current Location / City <span class="text-rose-500">*</span></label>
+                <input type="text" id="location" name="location" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition outline-none text-slate-800 placeholder-slate-400" placeholder="e.g. San Francisco, CA">
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please enter your location.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Work Experience & Alignment -->
+          <div id="step-section-2" class="step-section hidden space-y-6">
+            <h3 class="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center">
+              <i data-lucide="briefcase" class="w-5 h-5 mr-2 text-indigo-600"></i> Experience & Availability
+            </h3>
+
+            <!-- Experience Radio -->
+            <div class="space-y-2.5">
+              <span class="block text-sm font-semibold text-slate-700">Total Experience in Data Analytics <span class="text-rose-500">*</span></span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <label class="flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="totalExperience" value="1–2 years" required class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
+                  <span class="ml-3 text-sm font-medium text-slate-700">1–2 years</span>
+                </label>
+                <label class="flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="totalExperience" value="2–5 years" required class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
+                  <span class="ml-3 text-sm font-medium text-slate-700">2–5 years</span>
+                </label>
+                <label class="flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="totalExperience" value="5+ years" required class="w-4 h-4 text-indigo-600 border-slate-300 focus:ring-indigo-500">
+                  <span class="ml-3 text-sm font-medium text-slate-700">5+ years</span>
+                </label>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select your total experience.</p>
+            </div>
+
+            <!-- Engagement & Workmode -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2.5">
+                <span class="block text-sm font-semibold text-slate-700">Preferred Work Mode <span class="text-rose-500">*</span></span>
+                <div class="flex space-x-4">
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="workMode" value="Remote" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-medium text-slate-700">Remote</span>
+                  </label>
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="workMode" value="Hybrid" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-medium text-slate-700">Hybrid</span>
+                  </label>
+                </div>
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select preferred work mode.</p>
+              </div>
+
+              <div class="space-y-2.5">
+                <span class="block text-sm font-semibold text-slate-700">Preferred Engagement Type <span class="text-rose-500">*</span></span>
+                <div class="flex space-x-4">
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="engagementType" value="Full-Time" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-medium text-slate-700">Full-Time</span>
+                  </label>
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="engagementType" value="Part-Time" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-medium text-slate-700">Part-Time</span>
+                  </label>
+                </div>
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select preferred engagement type.</p>
+              </div>
+            </div>
+
+            <!-- Current Role & Company -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-1.5">
+                <label for="currentJobRole" class="block text-sm font-semibold text-slate-700">Current / Previous Job Role</label>
+                <input type="text" id="currentJobRole" name="currentJobRole" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400" placeholder="e.g. Senior Data Analyst">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="currentCompany" class="block text-sm font-semibold text-slate-700">Current / Previous Company</label>
+                <input type="text" id="currentCompany" name="currentCompany" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400" placeholder="e.g. Tech Corp">
+              </div>
+            </div>
+
+            <!-- Employment Status Radio -->
+            <div class="space-y-2.5">
+              <span class="block text-sm font-semibold text-slate-700">Current Employment Status <span class="text-rose-500">*</span></span>
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="employmentStatus" value="Currently Working" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Working</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="employmentStatus" value="Not Working" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Not Working</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="employmentStatus" value="Freelancing" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Freelancer</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="employmentStatus" value="Student" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Student</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="employmentStatus" value="Other" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Other</span>
+                </label>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select employment status.</p>
+            </div>
+
+            <!-- Previous Experience Text Area -->
+            <div class="space-y-1.5">
+              <label for="previousExperience" class="block text-sm font-semibold text-slate-700">Previous Work Experience (Provide summary)</label>
+              <textarea id="previousExperience" name="previousExperience" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400 text-sm" placeholder="Summarize your past work domains, analytical achievements, or training delivery..."></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 3: Technologies, Expertise & Teaching -->
+          <div id="step-section-3" class="step-section hidden space-y-6">
+            <h3 class="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center">
+              <i data-lucide="code-2" class="w-5 h-5 mr-2 text-indigo-600"></i> Skills & Expertise
+            </h3>
+
+            <!-- Tools Comfortable Teaching (Checkboxes) -->
+            <div class="space-y-2.5">
+              <span class="block text-sm font-semibold text-slate-700">Which tools/technologies are you comfortable teaching? <span class="text-rose-500">*</span></span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Advanced Excel" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Advanced Excel</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="SQL" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">SQL</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Power BI" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Power BI</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Python" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Python</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Statistics" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Statistics</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Data Visualization" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Data Visualization</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Data Cleaning" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Data Cleaning</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="teachingTools" value="Other" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Other</span>
+                </label>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select at least one technology.</p>
+            </div>
+
+            <!-- Expertise & Projects -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Overall Expertise Radio -->
+              <div class="space-y-2.5">
+                <span class="block text-sm font-semibold text-slate-700">Rate your overall Data Analytics expertise <span class="text-rose-500">*</span></span>
+                <div class="grid grid-cols-2 gap-2">
+                  <label class="flex items-center p-2.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="analyticsExpertise" value="Beginner" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-xs font-semibold text-slate-700">Beginner</span>
+                  </label>
+                  <label class="flex items-center p-2.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="analyticsExpertise" value="Intermediate" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-xs font-semibold text-slate-700">Intermediate</span>
+                  </label>
+                  <label class="flex items-center p-2.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="analyticsExpertise" value="Advanced" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-xs font-semibold text-slate-700">Advanced</span>
+                  </label>
+                  <label class="flex items-center p-2.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="analyticsExpertise" value="Expert" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-xs font-semibold text-slate-700">Expert</span>
+                  </label>
+                </div>
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please rate your expertise.</p>
+              </div>
+
+              <!-- Worked on projects? -->
+              <div class="space-y-2.5">
+                <span class="block text-sm font-semibold text-slate-700">Have you worked on real-world projects? <span class="text-rose-500">*</span></span>
+                <div class="flex space-x-4">
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="realWorldProjects" value="Yes" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-semibold text-slate-700">Yes</span>
+                  </label>
+                  <label class="flex-1 flex items-center p-3.5 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="realWorldProjects" value="No" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-3 text-sm font-semibold text-slate-700">No</span>
+                  </label>
+                </div>
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select Yes or No.</p>
+              </div>
+            </div>
+
+            <!-- Portfolio Link -->
+            <div class="space-y-1.5">
+              <label for="portfolioUrl" class="block text-sm font-semibold text-slate-700">Portfolio / LinkedIn / GitHub</label>
+              <input type="url" id="portfolioUrl" name="portfolioUrl" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400" placeholder="https://github.com/yourprofile">
+            </div>
+
+            <!-- Previously taught? -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+              <div class="space-y-2.5 sm:col-span-1">
+                <span class="block text-sm font-semibold text-slate-700">Previously Taught / Mentored? <span class="text-rose-500">*</span></span>
+                <div class="flex space-x-3">
+                  <label class="flex-1 flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="priorTeaching" value="Yes" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-sm font-semibold text-slate-700">Yes</span>
+                  </label>
+                  <label class="flex-1 flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                    <input type="radio" name="priorTeaching" value="No" required class="w-4 h-4 text-indigo-600">
+                    <span class="ml-2 text-sm font-semibold text-slate-700">No</span>
+                  </label>
+                </div>
+                <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select Yes or No.</p>
+              </div>
+
+              <!-- Describe teaching -->
+              <div class="space-y-1.5 sm:col-span-2">
+                <label for="teachingDescription" class="block text-sm font-semibold text-slate-700">If Yes, briefly describe experience</label>
+                <textarea id="teachingDescription" name="teachingDescription" rows="2" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400 text-xs" placeholder="e.g. Conducted bootcamps on SQL joins for 50+ students..."></textarea>
+              </div>
+            </div>
+
+            <!-- Why want to join -->
+            <div class="space-y-1.5">
+              <label for="reasonToJoin" class="block text-sm font-semibold text-slate-700">Why do you want to join Grambytes Nexus as a Data Analytics Mentor/Trainer?</label>
+              <textarea id="reasonToJoin" name="reasonToJoin" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none text-slate-800 placeholder-slate-400 text-sm" placeholder="Tell us about your teaching philosophy and why mentoring excites you..."></textarea>
+            </div>
+          </div>
+
+          <!-- STEP 4: Resume, Start Date & Consent -->
+          <div id="step-section-4" class="step-section hidden space-y-6">
+            <h3 class="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center">
+              <i data-lucide="check-circle-2" class="w-5 h-5 mr-2 text-indigo-600"></i> Final Verification
+            </h3>
+
+            <!-- Resume CV File Input -->
+            <div class="space-y-2">
+              <span class="block text-sm font-semibold text-slate-700">Upload your latest Resume / CV <span class="text-rose-500">*</span></span>
+              <div class="border-2 border-dashed border-slate-200 hover:border-indigo-500 rounded-2xl p-6 text-center cursor-pointer transition-colors relative" id="resume-dropzone">
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required class="absolute inset-0 opacity-0 cursor-pointer">
+                <div class="space-y-2 pointer-events-none">
+                  <div class="w-12 h-12 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center mx-auto" id="file-icon-box">
+                    <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+                  </div>
+                  <div class="text-sm font-medium text-slate-700">
+                    <span class="text-indigo-600 hover:text-indigo-700">Click to upload</span> or drag and drop
+                  </div>
+                  <p class="text-xs text-slate-400">PDF, DOC, DOCX up to 10MB</p>
+                  <p id="file-selected-name" class="text-xs font-semibold text-emerald-600 hidden"></p>
+                </div>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please upload your Resume / CV.</p>
+            </div>
+
+            <!-- Start Date Radio -->
+            <div class="space-y-2.5">
+              <span class="block text-sm font-semibold text-slate-700">When can you start? <span class="text-rose-500">*</span></span>
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="startDate" value="Immediately" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Immediate</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="startDate" value="Within 7 days" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">7 Days</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="startDate" value="Within 15 days" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">15 Days</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="startDate" value="Within 30 days" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">30 Days</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="radio" name="startDate" value="Other" required class="w-4 h-4 text-indigo-600">
+                  <span class="ml-2 text-xs font-semibold text-slate-700">Other</span>
+                </label>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select when you can start.</p>
+            </div>
+
+            <!-- Training Availability (Checkboxes) -->
+            <div class="space-y-2.5">
+              <span class="block text-sm font-semibold text-slate-700">Preferred Training Availability <span class="text-rose-500">*</span></span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="trainingAvailability" value="Morning" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Morning</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="trainingAvailability" value="Afternoon" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Afternoon</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="trainingAvailability" value="Evening" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Evening</span>
+                </label>
+                <label class="flex items-center p-3 border border-slate-200 hover:border-indigo-500 rounded-xl cursor-pointer transition">
+                  <input type="checkbox" name="trainingAvailability" value="Flexible" class="w-4 h-4 text-indigo-600 rounded">
+                  <span class="ml-2.5 text-xs font-semibold text-slate-700">Flexible</span>
+                </label>
+              </div>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">Please select at least one availability slot.</p>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="space-y-2 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <label class="flex items-start cursor-pointer">
+                <input type="checkbox" id="consentConfirm" name="consentConfirm" required class="w-4 h-4 text-indigo-600 rounded mt-1 shrink-0">
+                <span class="ml-3 text-xs sm:text-sm text-slate-600 leading-normal font-medium">
+                  I confirm that the information provided by me is accurate and can be used by Grambytes Nexus for recruitment purposes. <span class="text-rose-500">*</span>
+                </span>
+              </label>
+              <p class="error-msg hidden text-xs text-rose-500 mt-1">You must give consent to submit your application.</p>
+            </div>
+          </div>
+
+          <!-- Navigation Controls (Footer of form) -->
+          <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+            <button type="button" id="prev-step-btn" class="px-6 py-3 border border-slate-200 text-slate-600 hover:text-slate-800 font-semibold rounded-xl text-sm transition outline-none hidden">
+              Back
+            </button>
+            <div class="flex-1"></div>
+            <button type="button" id="next-step-btn" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl text-sm transition outline-none">
+              Next Step
+            </button>
+            <button type="submit" id="submit-application-btn" class="px-7 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm transition outline-none hidden">
+              Submit Application
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="hidden absolute inset-0 bg-white/90 backdrop-blur-sm z-30 flex flex-col items-center justify-center space-y-4">
+          <div class="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-lg font-bold text-slate-800">Submitting Application...</p>
+          <p class="text-sm text-slate-500">Writing your records to the Google Sheet database.</p>
+        </div>
+
+        <!-- Success Screen -->
+        <div id="success-card" class="hidden absolute inset-0 bg-white z-40 flex flex-col items-center justify-center p-6 sm:p-10 text-center space-y-6">
+          <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center shadow-lg shadow-emerald-100">
+            <i data-lucide="check" class="w-10 h-10"></i>
+          </div>
+          
+          <div class="space-y-2">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Application Submitted Successfully!</h3>
+            <p class="text-sm sm:text-base text-slate-600 max-w-md mx-auto">
+              Thank you for applying for the Data Analytics opportunity. Our team will review your application and contact you if your profile is shortlisted.
+            </p>
+          </div>
+
+          <div class="pt-4">
+            <button type="button" id="back-home-btn" class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-base shadow-md hover:shadow-lg transition">
+              Back to Home
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 md:py-28 bg-white border-t border-slate-100 scroll-mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Contact Us
+        </h2>
+        <div class="w-12 h-1 bg-indigo-600 rounded mx-auto mt-4 mb-6"></div>
+        <p class="text-lg text-slate-600">
+          Have questions about the campaign? Reach out to us.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Email card -->
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300 text-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800 mb-2">Email Us</h3>
+          <p class="text-sm text-slate-500 mb-4">Our recruiting team usually replies within 24 hours.</p>
+          <a id="contact-email" href="mailto:nexus-careers@grambytes.com" class="text-indigo-600 hover:text-indigo-700 font-semibold text-base hover:underline break-all">
+            nexus-careers@grambytes.com
+          </a>
+        </div>
+
+        <!-- Call card -->
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300 text-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800 mb-2">Call Us</h3>
+          <p class="text-sm text-slate-500 mb-4">Monday to Friday from 9 AM to 5 PM PST.</p>
+          <a id="contact-phone" href="tel:+15550192834" class="text-indigo-600 hover:text-indigo-700 font-semibold text-base hover:underline">
+            +1 (555) 019-2834
+          </a>
+        </div>
+
+        <!-- Office card -->
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300 text-center">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="map-pin" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800 mb-2">Our Office</h3>
+          <p class="text-sm text-slate-500 mb-4">Headquarters location details.</p>
+          <p id="contact-location" class="text-slate-700 font-semibold text-base">
+            Remote / Hybrid (India/US)
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 md:py-16 border-t border-slate-850">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12 border-b border-slate-800">
+        
+        <!-- Company Column -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-2.5">
+            <img src="logo.png" alt="Grambytes Nexus Logo" class="h-10 w-10 object-contain rounded-lg shadow-sm border border-slate-100 bg-white p-0.5">
+            <span id="footer-logo-text" class="text-xl font-extrabold text-white tracking-tight">
+              Grambytes Nexus
+            </span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm">
+            Empowering teams to make intelligent decisions through advanced analytics and business insights dashboards.
+          </p>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="md:col-span-3 space-y-4">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Campaign Pages</h4>
+          <ul class="space-y-2.5 text-sm" id="footer-links">
+            <!-- Dynamic footer navigation links -->
+          </ul>
+        </div>
+
+        <!-- Form Link Column -->
+        <div class="md:col-span-4 space-y-4">
+          <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Submit Application</h4>
+          <p class="text-sm text-slate-400">
+            Submit your application directly through our custom-integrated hiring form.
+          </p>
+          <div class="pt-2">
+            <a href="#application" class="inline-flex items-center space-x-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg text-sm shadow-sm transition-all duration-200">
+              <span>Apply Now</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs">
+        <p id="copyright" class="text-slate-500">
+          &copy; 2026 Grambytes Nexus. All rights reserved. Data Analytics Campaign.
+        </p>
+        
+        <!-- Social Placeholders -->
+        <div class="flex space-x-5" id="footer-socials">
+          <!-- Dynamic socials render -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
